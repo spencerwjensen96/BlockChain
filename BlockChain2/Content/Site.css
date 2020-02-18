@@ -22,3 +22,28 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.navbar {
+    background-image: linear-gradient(#6d94bf, #446E9B 50%, #3e648d);
+}
+
+.nav-item {
+    color: #cccccc !important;
+}
+
+
+.navbar-inverse .navbar-brand {
+    color: #cccccc !important;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #cccccc !important;
+}
+
+.navbar-inverse .navbar-brand:hover {
+    color: #ffffff !important;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    color: #ffffff !important;
+}
