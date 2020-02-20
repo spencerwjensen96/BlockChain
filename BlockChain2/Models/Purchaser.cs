@@ -19,6 +19,6 @@ namespace BlockChain2.Models
         public string lastName { get; set; }
         [Required]
         public string email { get; set; }
-        public List<Shipment> incomingShipments { get; set; }
+        public ICollection<Shipment> incomingShipments { get; set; }
     }
 }

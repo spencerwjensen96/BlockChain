@@ -7,8 +7,10 @@ using System.Web;
 
 namespace BlockChain2.Models
 {
+    [Table("Users")]
     public class User
     {
+        [Key]
         public string userId { get; set; }
     }
 }

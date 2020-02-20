@@ -26,8 +26,9 @@ namespace BlockChain2.Models
         public string country { get; set; }
         [Required]
         public string zipCode { get; set; }
+        
         public Shipment incomingShipment { get; set; }
-        public List<Shipment> currentShipments { get; set; }
+        public ICollection<Shipment> currentShipments { get; set; }
     }
 }
  

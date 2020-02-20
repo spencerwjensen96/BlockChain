@@ -23,7 +23,7 @@ namespace BlockChain2.Models
         [Required]
         public bool signatureRequired  { get; set; }
         [Required]
-        List<Item> itemsContained { get; set; }
+        public ICollection<Item> itemsContained { get; set; }
         [Required]
         public string weight  { get; set; }
         [Required]
