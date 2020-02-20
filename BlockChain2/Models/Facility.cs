@@ -8,11 +8,11 @@ using BlockChain2.Models;
 
 namespace BlockChain2.Models
 {
-    [Table("Facilities")]
-    public class Facility : User
+    [Table("Facility")]
+    public class Facility
     {
         [Key]
-        public string facilityID { get; set; }
+        public int facilityID { get; set; }
         [Required]
         public string facilityName { get; set; }
         [Required]
@@ -26,9 +26,6 @@ namespace BlockChain2.Models
         public string country { get; set; }
         [Required]
         public string zipCode { get; set; }
-        
-        public Shipment incomingShipment { get; set; }
-        public ICollection<Shipment> currentShipments { get; set; }
     }
 }
  
