@@ -23,27 +23,115 @@ textarea {
     max-width: 280px;
 }
 
-.navbar {
-    background-image: linear-gradient(#6d94bf, #446E9B 50%, #3e648d);
+body {
+    text-align: center;
+    background-image: url("https://www.xmple.com/wallpaper/grey-gradient-linear-highlight-white-1920x1080-c2-ffffff-dcdcdc-l-67-a-135-f-21.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 15px;
 }
 
-.nav-item {
-    color: #cccccc !important;
+.menu-link {
+    position: relative;
+    color: white !important;
+    text-decoration: none;
+    margin-right: 15px;
 }
 
-
-.navbar-inverse .navbar-brand {
-    color: #cccccc !important;
+.myForm {
+    text-align: right;
+    padding-right: 25%;
 }
 
-.navbar-inverse .navbar-nav > li > a {
-    color: #cccccc !important;
+.menu-link:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    bottom: 0px;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
 }
 
-.navbar-inverse .navbar-brand:hover {
-    color: #ffffff !important;
+.menu-link:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
-    color: #ffffff !important;
+.menu-link:hover {
+    color: white !important;
+}
+
+img {
+    border-radius: 5px;
+}
+
+.contact-text-box {
+    max-width: 300px;
+    width: 300px;
+    height: 200px;
+    max-height: 500px;
+}
+
+input, select {
+    border-radius: 30px;
+    border: solid #a3a3a3 1.5px;
+    height: 2.4em;
+    padding: 5px;
+    -webkit-transition: 0.4s;
+}
+
+    input:focus, textarea:focus, select:focus {
+        outline: none;
+        border-color: rgb(55,120,255);
+    }
+
+    select:focus {
+        border-radius: 13px 13px 0px 0px;
+    }
+
+textarea {
+    border-radius: 5px;
+    padding: 5px;
+    -webkit-transition: 0.2s;
+    border: solid #a3a3a3 1.5px;
+}
+
+.submit-button {
+    margin: 8px;
+    -webkit-transition: 0.4s;
+    color: white;
+    background: rgb(0,36,189);
+    background: linear-gradient(36deg, rgba(0,36,189,1) 0%, rgba(55,120,255,1) 100%);
+    height: 2.8em;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: none;
+}
+
+    .submit-button:hover {
+        box-shadow: #717171 0px 1px 17px 3px;
+    }
+
+.contact-text-box-mission {
+    width: 300px;
+    max-width: 300px;
+    max-height: 500px;
+    height: 100px;
+}
+
+.navbar-inverse {
+    background: rgb(0,36,189);
+    background: linear-gradient(36deg, rgba(0,36,189,1) 0%, rgba(55,120,255,1) 100%);
+    border: none;
+}
+
+th {
+    text-align: center;
 }

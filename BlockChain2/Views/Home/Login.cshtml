@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Home", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4" style="text-align:right">
+            <label for="inputEmail">Email address</label>
+            @Html.TextBox("Email address")
+            <br />
+            <br />
+            <label for="inputPassword">Password</label>
+            @Html.Password("Password")
+            <br />
+            <br />
+            <div style="text-align:center">
+                <button type="submit">Login</button>
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+}
