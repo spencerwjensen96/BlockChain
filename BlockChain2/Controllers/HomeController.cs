@@ -34,28 +34,31 @@ namespace BlockChain2.Controllers
             FormsAuthentication.SignOut();
             return Redirect("/Home");
         }
+
         [HttpGet]
-        public ActionResult Login(string returnUrl)
+        public ActionResult Login()
         {
-            ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(FormCollection form, string ReturnUrl, bool rememberMe = false)
+        public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
-            String email = form["Email address"].ToString();
-            String password = form["Password"].ToString();
-            if (email == "purchaser@test.com" && password == "test123")
+            string email = form["Email address"].ToString();
+            string password = form["Password"].ToString();
+
+/*          if (email == "purchaser@test.com" && password == "test123")
+
             {
 
             }
             else if (email == "vendor@test.com" && password == "test123")
             {
 
-            }
+            }*/
             FormsAuthentication.SetAuthCookie(email, rememberMe);
             return RedirectToAction("Index", "Home");
+
         }
     }
 }
