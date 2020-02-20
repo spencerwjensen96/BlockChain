@@ -34,14 +34,9 @@ namespace BlockChain2.Controllers
             FormsAuthentication.SignOut();
             return Redirect("/Home");
         }
-<<<<<<< HEAD
 
         [HttpGet]
         public ActionResult Login()
-=======
-        [HttpGet]
-        public ActionResult Login(string returnUrl)
->>>>>>> 36298c97ce58b6098661f38ddbe0e3c45e04121a
         {
             return View();
         }
@@ -49,29 +44,21 @@ namespace BlockChain2.Controllers
         [HttpPost]
         public ActionResult Login(FormCollection form, bool rememberMe = false)
         {
-<<<<<<< HEAD
             string email = form["Email address"].ToString();
             string password = form["Password"].ToString();
 
-/*            if (email == "purchaser@test.com" && password == "test123")
-=======
-            String email = form["Email address"].ToString();
-            String password = form["Password"].ToString();
-            if (email == "purchaser@test.com" && password == "test123")
->>>>>>> 36298c97ce58b6098661f38ddbe0e3c45e04121a
+/*          if (email == "purchaser@test.com" && password == "test123")
+
             {
 
             }
             else if (email == "vendor@test.com" && password == "test123")
             {
 
-            }
+            }*/
             FormsAuthentication.SetAuthCookie(email, rememberMe);
             return RedirectToAction("Index", "Home");
-<<<<<<< HEAD
 
-=======
->>>>>>> 36298c97ce58b6098661f38ddbe0e3c45e04121a
         }
     }
 }
