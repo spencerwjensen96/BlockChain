@@ -7,7 +7,7 @@ using System.Web;
 
 namespace BlockChain2.Models
 {
-    [Table("Items")]
+    [Table("Item")]
     public class Item
     {
         [Key]
@@ -15,8 +15,10 @@ namespace BlockChain2.Models
         [Required]
         public string itemName { get; set; }
         [Required]
-        public string serialNo { get; set; }
+        public string serialNumber { get; set; }
         [Required]
         public int quantityOfItem { get; set; }
+        [Required]
+        public Facility facility { get; set; }
     }
 }
