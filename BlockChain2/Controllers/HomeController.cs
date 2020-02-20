@@ -20,6 +20,12 @@ namespace BlockChain2.Controllers
 
             return View();
         }
+        [Authorize]
+        public ActionResult Farmer()
+        {
+
+            return View();
+        }
 
         public ActionResult Contact()
         {
@@ -47,15 +53,15 @@ namespace BlockChain2.Controllers
             string email = form["Email address"].ToString();
             string password = form["Password"].ToString();
 
-/*          if (email == "purchaser@test.com" && password == "test123")
-
+            if (email == "farmer@test.com" && password == "test123")
             {
-
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+                return RedirectToAction("Farmer", "Home");
             }
             else if (email == "vendor@test.com" && password == "test123")
             {
 
-            }*/
+            }
             FormsAuthentication.SetAuthCookie(email, rememberMe);
             return RedirectToAction("Index", "Home");
 
