@@ -17,11 +17,19 @@
                     <span class="icon-bar"></span>
                 </button>
                 <span class="nav-item">@Html.ActionLink("Heifer International", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</span>
+                @Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "navbar-brand navbar-custom-link" })
+                @Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand navbar-custom-link" })
+                @if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("Log Out", "Logout", "Home", null, new { @class = "btn btn-primary" })
+                }
+                else
+                {
+                    @Html.ActionLink("Log in", "Login", "Home", new { area = "" }, new { @class = "btn btn-primary" })
+                }
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item">@Html.ActionLink("About", "About", "Home")</li>
-                    <li class="nav-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
             </div>
         </div>
