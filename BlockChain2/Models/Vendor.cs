@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using BlockChain2.Models;
 
 namespace BlockChain2.Models
 {

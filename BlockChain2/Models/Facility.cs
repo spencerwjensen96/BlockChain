@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Shipment;
+using BlockChain2.Models;
 
 namespace BlockChain2.Models
 {
@@ -15,7 +15,8 @@ namespace BlockChain2.Models
         public string state { get; set; }
         public string country { get; set; }
         public string zipCode { get; set; }
-        public string zipCode { get; set; }
+        public Shipment incomingShipment { get; set; }
+        public List<Shipment> currentShipments { get; set; }
     }
 }
  

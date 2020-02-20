@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using BlockChain2.Models;
 
 namespace BlockChain2.Models
 {
@@ -10,6 +11,8 @@ namespace BlockChain2.Models
         public string shipmentID { get; set; }
         public string destAddress { get; set; }
         public string estDeliveryDate { get; set; }
+        public DeliveryService deliveryService { get; set; }
+        public MovementStatus movementStatus { get; set; }
         public bool signatureRequired  { get; set; }
         public string weight  { get; set; }
         public string units  { get; set; }
