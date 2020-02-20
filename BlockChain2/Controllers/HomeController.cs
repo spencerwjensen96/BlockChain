@@ -29,12 +29,12 @@ namespace BlockChain2.Controllers
         }
 
         [HttpGet]
-<<<<<<< HEAD
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
             return Redirect("/Home");
-=======
+        }
+        [HttpGet]
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
@@ -46,18 +46,16 @@ namespace BlockChain2.Controllers
         {
             String email = form["Email address"].ToString();
             String password = form["Password"].ToString();
-
-/*            if (email == "purchaser@test.com" && password == "test123")
+            if (email == "purchaser@test.com" && password == "test123")
             {
 
             }
             else if (email == "vendor@test.com" && password == "test123")
             {
 
-            }*/
+            }
             FormsAuthentication.SetAuthCookie(email, rememberMe);
-            return Redirect(ReturnUrl);
->>>>>>> 45a290a304c6836117a2c907b74c1539892e4d1d
+            return RedirectToAction("Index", "Home");
         }
     }
 }
