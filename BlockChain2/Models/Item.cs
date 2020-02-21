@@ -10,6 +10,14 @@ namespace BlockChain2.Models
     [Table("Item")]
     public class Item
     {
+        public Item(int id, string name, string num, int q, string[] lst)
+        {
+            itemID = id;
+            itemName = name;
+            serialNumber = num;
+            quantityOfItem = q;
+            certs = lst.ToList();
+        }
         [Key]
         public int itemID { get; set; }
         [Required]

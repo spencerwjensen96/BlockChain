@@ -15,9 +15,23 @@ namespace BlockChain2.Controllers
     {
         //private BlockchainContext db = new BlockchainContext();
         //return View(db.Items.ToList());
-        public static List<Item> lstItems = new List<Item>();
-        public static string[] certs = { "Organic", "Grass-fed", "Pesticide-free", "Green" };
+        public static string[] certs = { "Organic ", "Grass-fed ", "Pesticide-free ", "Green " };
+        public static string[] test1 = { "Organic ", "Grass-fed " };
+        public static string[] test2 = { "Pesticide-free ", "Green " };
+        public static string[] test3 = { "Organic ", "Grass-fed ", "Green " };
+        public static string[] test4 = { "Organic ", "Pesticide-free " };
+
+        public static List<Item> lstItems = new List<Item>() {
+            new Item(1, "cow", "12343", 1, test1),
+            new Item(1, "wheat", "19854", 55, certs),
+            new Item(1, "peas", "46494", 108, test2),
+            new Item(1, "goat", "93847", 3, test3),
+            new Item(1, "chickens", "243545", 12, test4),
+            new Item(1, "heifer", "92174", 1, test1)
+        };
+        
         public static List<string> lstCert = new List<string>(certs);
+
         
 
         // GET: Items
