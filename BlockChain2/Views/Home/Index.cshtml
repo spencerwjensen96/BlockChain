@@ -7,7 +7,15 @@
     <hr class="my-4">
     <p>Have confidence that your product is labelled correctly at each step in the supply chain.</p>
     <p class="lead">
-        <a class="btn btn-primary btn-lg" href="/Home/Login" role="button">Get Started</a>
+        @if (BlockChain2.Controllers.HomeController.userType == "farmer")
+        {
+            <a class="btn btn-primary btn-lg" href="/Home/Farmer" role="button">Get Started</a>
+        }
+        else if (BlockChain2.Controllers.HomeController.userType == "vendor")
+        {
+            <a class="btn btn-primary btn-lg" href="/Home/Vendor" role="button">Get Started</a>
+        }
+
     </p>
 </div>
 <div class="row">

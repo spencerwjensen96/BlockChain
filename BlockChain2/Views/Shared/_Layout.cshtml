@@ -24,7 +24,7 @@
                     <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "navbar-brand menu-link" })</li>
                 </ul>
                 <ul class="nav navbar-right navbar-nav">
-                    <li>@Html.ActionLink("Register", "Create", "Users", new { area = "" }, new { @class = "navbar-brand menu-link" })</li>
+                    <li>@Html.ActionLink("Register", "Register", "Users", new { area = "" }, new { @class = "navbar-brand menu-link" })</li>
 
                     @if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
                     {

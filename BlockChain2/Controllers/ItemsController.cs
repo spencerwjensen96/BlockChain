@@ -16,6 +16,8 @@ namespace BlockChain2.Controllers
         //private BlockchainContext db = new BlockchainContext();
         //return View(db.Items.ToList());
         public static List<Item> lstItems = new List<Item>();
+        public static List<string> lstCert = new List<string>();
+        
 
         // GET: Items
         public ActionResult Index()
@@ -30,7 +32,7 @@ namespace BlockChain2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = lstItems[id];
+            Item item = lstItems[id - 1];
             if (item == null)
             {
                 return HttpNotFound();
@@ -73,7 +75,7 @@ namespace BlockChain2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Item item = lstItems[id];
+            Item item = lstItems[id- 1];
             if (item == null)
             {
                 return HttpNotFound();
@@ -86,10 +88,13 @@ namespace BlockChain2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "itemID,itemName,serialNumber,quantityOfItem")] Item item)
+        public ActionResult Edit(Item item)
         {
             if (ModelState.IsValid)
             {
+                lstItems[item.itemID].itemName = item.itemName;
+                lstItems[item.itemID].serialNumber = item.serialNumber;
+                lstItems[item.itemID].quantityOfItem = item.quantityOfItem;
                 //db.Entry(item).State = EntityState.Modified;
                 //db.SaveChanges();
 

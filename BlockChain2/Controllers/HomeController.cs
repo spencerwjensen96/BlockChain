@@ -9,6 +9,8 @@ namespace BlockChain2.Controllers
 {
     public class HomeController : Controller
     {
+        public static string userType = "";
+
         public ActionResult Index()
         {
             return View();
@@ -20,10 +22,16 @@ namespace BlockChain2.Controllers
 
             return View();
         }
+
         [Authorize]
         public ActionResult Farmer()
         {
+            return View();
+        }
 
+        [Authorize]
+        public ActionResult Vendor()
+        {
             return View();
         }
 
@@ -53,13 +61,15 @@ namespace BlockChain2.Controllers
 
             if (email == "farmer@test.com" && password == "test123")
             {
+                userType = "farmer";
                 FormsAuthentication.SetAuthCookie(email, rememberMe);
                 return RedirectToAction("Farmer", "Home");
             }
             else if (email == "vendor@test.com" && password == "test123")
             {
+                userType = "vendor";
                 FormsAuthentication.SetAuthCookie(email, rememberMe);
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Vendor", "Home");
             }
             ViewBag.LoginMessage = "Incorrect username or password";
             return View();
