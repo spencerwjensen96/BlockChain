@@ -19,6 +19,9 @@ namespace BlockChain2.Models
         [Required]
         public int quantityOfItem { get; set; }
 
+        [Display(Name ="Certifications")]
+        public List<string> certs { get;  set; }
+
         public Facility facility { get; set; }
     }
 }

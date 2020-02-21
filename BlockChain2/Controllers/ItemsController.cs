@@ -16,7 +16,8 @@ namespace BlockChain2.Controllers
         //private BlockchainContext db = new BlockchainContext();
         //return View(db.Items.ToList());
         public static List<Item> lstItems = new List<Item>();
-        public static List<string> lstCert = new List<string>();
+        public static string[] certs = { "Organic", "Grass-fed", "Pesticide-free", "Green" };
+        public static List<string> lstCert = new List<string>(certs);
         
 
         // GET: Items
@@ -28,10 +29,6 @@ namespace BlockChain2.Controllers
         // GET: Items/Details/5
         public ActionResult Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Item item = lstItems[id - 1];
             if (item == null)
             {
@@ -44,6 +41,7 @@ namespace BlockChain2.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            ViewBag.Certs = lstCert;
             return View();
         }
 
@@ -71,10 +69,6 @@ namespace BlockChain2.Controllers
         // GET: Items/Edit/5
         public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Item item = lstItems[id- 1];
             if (item == null)
             {

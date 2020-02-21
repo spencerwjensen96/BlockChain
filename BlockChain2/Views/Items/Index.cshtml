@@ -21,6 +21,9 @@
         <th>
             @Html.DisplayNameFor(model => model.quantityOfItem)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.certs)
+        </th>
         <th></th>
     </tr>
 
@@ -34,6 +37,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.quantityOfItem)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.certs)
+        @*@foreach (var cert in item.certs) {
+            <p>@Html.DisplayFor(x => cert[x])</p>
+        }*@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.itemID }) |
