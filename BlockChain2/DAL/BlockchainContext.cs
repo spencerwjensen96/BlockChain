@@ -10,9 +10,9 @@ namespace BlockChain2.DAL
         public DbSet<Facility> Facilities { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<MovementStatus> MovementStatuses { get; set; }
-        //public DbSet<Purchaser> Purchasers { get; set; }
         public DbSet<Shipment> Shipments { get; set; }
         public DbSet<User> Users { get; set; }
-        //public DbSet<Vendor> Vendors { get; set; }
+        public DbSet<ShipmentItem> ShipmentItems { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
     }
 }
