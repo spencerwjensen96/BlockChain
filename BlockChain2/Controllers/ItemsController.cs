@@ -15,12 +15,12 @@ namespace BlockChain2.Controllers
     {
         //private BlockchainContext db = new BlockchainContext();
         //return View(db.Items.ToList());
-        List<Item> lstItems = new List<Item>();
+        public static List<Item> lstItems = new List<Item>();
 
         // GET: Items
         public ActionResult Index()
         {
-            return View(lstItems.ToList());
+            return View(lstItems);
         }
 
         // GET: Items/Details/5
@@ -39,6 +39,7 @@ namespace BlockChain2.Controllers
         }
 
         // GET: Items/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -48,17 +49,21 @@ namespace BlockChain2.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "itemID,itemName,serialNumber,quantityOfItem")] Item item)
+        //[ValidateAntiForgeryToken]
+        //[Bind(Include = "itemID,itemName,serialNumber,quantityOfItem")]
+        public ActionResult Create(Item item)
         {
             if (ModelState.IsValid)
             {
+                item.itemID = lstItems.Count() + 1;
                 lstItems.Add(item);
                 //db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", lstItems);
             }
-
-            return View(item);
+            else
+            {
+                return View(item);
+            }
         }
 
         // GET: Items/Edit/5
@@ -109,24 +114,24 @@ namespace BlockChain2.Controllers
         }
 
         // POST: Items/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Item item = lstItems[id];
-            lstItems.Remove(item);
-            //db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult DeleteConfirmed(int id)
+        //{
+        //    Item item = lstItems[id];
+        //    lstItems.Remove(item);
+        //    //db.SaveChanges();
+        //    return RedirectToAction("Index");
+        //}
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                //db.Dispose();
-                lstItems.Clear();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        //db.Dispose();
+        //        lstItems.Clear();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }

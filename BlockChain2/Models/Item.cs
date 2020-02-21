@@ -11,14 +11,14 @@ namespace BlockChain2.Models
     public class Item
     {
         [Key]
-        public string itemID { get; set; }
+        public int itemID { get; set; }
         [Required]
         public string itemName { get; set; }
         [Required]
         public string serialNumber { get; set; }
         [Required]
         public int quantityOfItem { get; set; }
-        [Required]
+
         public Facility facility { get; set; }
     }
 }
