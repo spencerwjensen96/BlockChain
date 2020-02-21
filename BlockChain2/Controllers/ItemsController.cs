@@ -62,14 +62,12 @@ namespace BlockChain2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        //[Bind(Include = "itemID,itemName,serialNumber,quantityOfItem")]
         public ActionResult Create(Item item)
         {
             if (ModelState.IsValid)
             {
                 item.itemID = lstItems.Count() + 1;
                 lstItems.Add(item);
-                //db.SaveChanges();
                 return RedirectToAction("Index", lstItems);
             }
             else
@@ -112,10 +110,6 @@ namespace BlockChain2.Controllers
         // GET: Items/Delete/5
         public ActionResult Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
             Item item = lstItems[id];
             if (item == null)
             {
