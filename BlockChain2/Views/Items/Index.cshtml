@@ -8,7 +8,11 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @if (BlockChain2.Controllers.HomeController.userType == "farmer")
+    {
+        @Html.ActionLink("Create New", "Create")
+    }
+
 </p>
 <table class="table">
     <tr>
@@ -45,9 +49,9 @@
         }*@
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.itemID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.itemID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.itemID })
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.itemID }) |*@
+            @Html.ActionLink("Details", "Details", new { id=item.itemID })
+            @*@Html.ActionLink("Delete", "Delete", new { id=item.itemID })*@
         </td>
     </tr>
 }

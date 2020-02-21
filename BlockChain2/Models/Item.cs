@@ -10,6 +10,7 @@ namespace BlockChain2.Models
     [Table("Item")]
     public class Item
     {
+        public Item() { }
         public Item(int id, string name, string num, int q, string[] lst)
         {
             itemID = id;

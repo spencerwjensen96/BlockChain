@@ -32,8 +32,6 @@ namespace BlockChain2.Controllers
         
         public static List<string> lstCert = new List<string>(certs);
 
-        
-
         // GET: Items
         public ActionResult Index()
         {
