@@ -60,10 +60,11 @@ namespace BlockChain2.Controllers
             }
             else if (email == "vendor@test.com" && password == "test123")
             {
-
+                FormsAuthentication.SetAuthCookie(email, rememberMe);
+                return RedirectToAction("Index", "Home");
             }
-            FormsAuthentication.SetAuthCookie(email, rememberMe);
-            return RedirectToAction("Index", "Home");
+            ViewBag.LoginMessage = "Incorrect username or password";
+            return View();
 
         }
     }
